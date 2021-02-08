@@ -1,11 +1,18 @@
 /* Fonts */
-h1, h2, h3 {
+h1 {
   font-family: "Oswald", sans-serif;
+}
+h2, h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(1.5, 3vw, 2.5rem);
+  max-width: 20ch;
 }
 
 p, a, ul, li {
   font-family: "Josefin Slab", serif;
-
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  line-height: 1.4;
+  max-width: 60ch;
 }
 
 a, li {
@@ -13,6 +20,7 @@ a, li {
   color: var(--white);
   list-style-type: none;
 }
+
 i {
     font-size: clamp(32px, 10vw, 42px)
 }
