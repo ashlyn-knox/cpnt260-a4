@@ -18,6 +18,7 @@
 :root {
   --black: hsl(3, 30%, 5%);
   --white: hsl(0, 0%, 98%);
+  --red: hsla(351, 80%, 65%);
 }
 
 /* ------------- */
@@ -93,13 +94,32 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: 0px 4px 5px var(--black);
   display: flex;
 }
 
+/* Quick Download section */
 .downloads-container {
+  padding: 0rem 6rem 0 2rem;
   display: none;
+  background-color: var(--black);
+  opacity: 0.8;
 }
 
+.downloads-container * {
+  color: var(--white);
+}
+.desktop-links a {
+  transition: opacity, background-color 0.25s ease;
+  padding: 0 6rem 0 2rem;
+}
+.desktop-links a:hover {
+  opacity: 0.5;
+  background-color: var(--red);
+}
+.desktop-links li:hover {
+  list-style-image: url("../assets/icons/drum-circle.svg")
+}
 /* Grid Layout Mobile */
 
 @supports (display:grid) {
@@ -123,6 +143,7 @@ body {
 .title-container {
   grid-column: 1 / 3;
   grid-row: 3 / 4;
+  padding: 12px;
 }
 .banner-container {
   grid-column: 2 / 3;
@@ -151,9 +172,6 @@ body {
   align-self: end;
   padding: 0 0 1.2rem 2rem;
 }
-.down-anchor > *:hover {
-  color: red;
-}
 /* ---------------------- */
 /* --- Desktop Layout --- */
 /* ---------------------- */
@@ -168,10 +186,20 @@ body {
     background-repeat: no-repeat;
     position: relative;
   }
+  .title {
+    padding: 0;
+  }
   /* Downloadable content desktop links are to stay in hero */
   .mobile-downloads-container {
     display: none;
   } 
+  
+  /* Return to top anchor */
+  .up-anchor {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
   @supports (display:grid) {
     .site-wrapper {
       grid-template-columns: 1fr;
@@ -254,29 +282,60 @@ body {
 /* ---------- */
 /* NAVIGATION */
 /* ---------- */
+.nav-wrapper {
+  display: flex;
+}
 .nav-wrapper input {
   display: none;
 
   padding: 2rem;
 }
 .nav-wrapper > label {
-    color: var(--white);
+  color: var(--white);
 }
-
+.nav-wrapper > label:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
 .nav-wrapper input:checked ~ * ~ .nav-menu {
   display: block;
 }
 
 .nav-menu {
+  height: 100%;
+  background-color: var(--black);
+  opacity: 0.7;
+
   display: none;
 }
+.nav-links a {
+  padding: 0 4rem;
+}
+.nav-links a:hover {
+  background-color: var(--red);
+}
 
+
+/* Link to github */
+.social-container i:hover {
+  opacity: 0.8;
+}
 /* ------ */
 /* Shapes */
 /* ------ */
 
-/* hero title */
+/* Home icons */
+.home-icon {
+  margin: 12px;
+  color: var(--white);
 
+  transition: opacity 0.25s ease-in-out;
+
+}
+.home-icon:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
 /* Little banner in hero */
 .banner-container {
   margin: 0;
@@ -286,11 +345,14 @@ body {
   display: flex;
   flex-direction: row;
   color: var(--black);
+
+  transition: opacity 0.25s ease-in-out;
 }
 
-.banner-link:hover > * {
-  background-color: red;
+.banner-link:hover  {
+  opacity: 0.8;
 }
+
 
 .banner-line {
   margin-right: 5px;
@@ -335,3 +397,31 @@ body {
 .mobile-downloads-container * {
   color: var(--black);
 }
+.mobile-quick-links li:hover {
+  list-style-image: url("../assets/icons/drum-circle-black.svg");
+}
+/* ------------------------ */
+/* Quick navigation anchors */
+/* ------------------------ */
+
+.up-anchor {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.up-anchor i {
+  transition: opacity 0.25s ease-in-out;
+}
+.up-anchor i:hover {
+  opacity: 0.8;
+  color: var(--red);
+}
+down-anchor i {
+  transition: opacity 0.25s ease-in-out;
+
+}
+.down-anchor i:hover {
+  opacity: 0.8;
+  color: var(--red);
+}
+

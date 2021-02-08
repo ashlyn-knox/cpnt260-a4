@@ -26,8 +26,11 @@
   <body>
     <div class="site-wrapper">
       <!--hero section-->
-      <div class="hero-wrapper">
-
+      <div class="hero-wrapper" id="hero-return">
+        <!--home icon-->
+        <div>
+          <a href="index.html"><img src="assets/icons/drum-circle.svg" width="40px" class="home-icon"></a>
+        </div>
         <!--Site Navigation-->
         <div class="nav-wrapper">
 
@@ -38,20 +41,18 @@
             <h2>Menu</h2>
 
             <ul class="nav-links">
-              <li><a href="#">About</a></li>
               <li><a href="#">Basic Rock Beats</a></li>
-              <li><a href="#">Advanced Rock Beats</a></li>
               <li><a href="#">Sticking Rudiments</a></li>
               <li><a href="#">Lead Sheets</a></li>
               <li><a href="#">Drum Music Theory</a></li>
-              <li><a href="#">Lilypond</a></li>
             </ul>
           </nav>
         </div>
 
         <!--title section-->
+<!--I will be creating svg blocks that will serve as underlined offets as seen in my mockups-->
         <header class="title-container">
-            <a href="index.html" class="title"><h1>Drum Lessons</h1></a>
+          <h1>Drum Lessons</h1>
         </header>
 
         <!--Stylized call to action-->
@@ -71,7 +72,7 @@
         <aside class="social-container">
           <ul>
 
-            <li><a href="#"><i class="lab la-github"></i></a></li>
+            <li><a href="https://github.com/ashlyn-knox"><i class="lab la-github"></i></a></li>
             <li><a href="#"><i class="las la-envelope"></i></a></li>
           </ul>
         </aside>
@@ -98,7 +99,7 @@
           <p>By</br>Ashlyn Knox</p>
         </div>
         <div class="down-anchor">
-        <i class="las la-chevron-down"></i>
+          <a href="#text-anchor"><i class="las la-chevron-down"></i></a>
         </div>
       </div>
 
@@ -106,7 +107,7 @@
       <main class="content-wrapper">
 
         <!--Page description and infomation-->
-        <article class="about-container">
+        <article class="about-container" id="text-anchor">
           <h2>What can you find here?</h2>
           <p>This site is a resource repo for drummers. It contains all of the music that I have written for my students over the years.</p>
           <i class="las la-drum"></i>
@@ -128,6 +129,9 @@
             </ul>
           </div>
         </section>
+        <!--back to top-->
+        <div class="up-anchor">
+        <a href="#hero-return"><i class="las la-chevron-up"></i></a>
       </main>
 
       <!--copyright and footer info-->

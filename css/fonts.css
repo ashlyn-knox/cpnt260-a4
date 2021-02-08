@@ -1,7 +1,10 @@
 /* Fonts */
 h1 {
+  color: var(--white);
+  font-variant: small-caps;
   font-family: "Oswald", sans-serif;
-  font-size: clamp(2.2rem, 10vw, 3.5rem);
+  font-size: clamp(2.6rem, 10vw, 3.5rem);
+  font-weight: 800;
 }
 h2, h3, span {
   font-family: "Oswald", sans-serif;
@@ -31,4 +34,26 @@ i {
 
 .down-anchor i, .hero-footer p {
   color: var(--white);
+}
+.up-anchor i {
+  color: var(--black);
+}
+
+/* Nav menu settings */
+.nav-menu h2 {
+  color: var(--white);
+  text-align: center;
+}
+.nav-menu hr {
+  width: 8rem;
+}
+/*This needs to be adjusted for mobile*/
+.nav-links a {
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(0.5rem, 10vh, 2rem);
+  font-weight: 300;
+}
+/* Sign up banner */
+.banner-content  span {
+  font-variant: small-caps;
 }
