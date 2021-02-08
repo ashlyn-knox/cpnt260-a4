@@ -1,0 +1,149 @@
+/* Custom Variables */
+:root {
+  --black: hsl(38, 32%, 10%);
+  --white: hsl(0, 0%, 98%);
+}
+
+/* ------ */
+/* Layout */
+/* ------ */
+* {
+   box-sizing: border-box;
+   }
+
+body {
+
+  margin: auto;
+  /* Make the site not scroll */
+  width: 100vw;
+}
+
+/* Default settings for limited support */
+aside {
+  margin: 0;
+}
+
+footer {
+  margin: 0;
+}
+
+header {
+  margin: 0;
+}
+
+main {
+  margin: 0;
+}
+
+nav {
+  margin: 0;
+}
+
+
+
+/* Non-grid support settings */
+/* TODO create layout for non grid-support. The layout for this page is heavily grid dependent so I will not be focusing on this for this project */
+.hero-container {
+  background-image: url("../assets/images/lg/drumset-mobile.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background-size: 100vw;
+  display: flex;
+}
+
+/* Grid support settings */
+/* Mobile Layout */
+
+@supports (display: grid) {
+  .hero-container {
+    /*style*/
+    padding: 2rem;
+
+    /* layout */
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: minmax(100px, 45vw) minmax(120px, 55vw);
+    grid-template-areas:
+    "dl   nav"
+    "main main"
+    "head head"
+    "foot foot"
+  }
+}
+
+/* ----- GRID ITEMS ----- */
+
+.content-wrapper {
+  grid-area: main;
+}
+.footer-wrapper {
+  grid-area: foot;
+}
+
+.nav-wrapper {
+  grid-area: nav;
+}
+
+.social-wrapper {
+  grid-area: soc;
+}
+.title-wrapper {
+  grid-area: head;
+}
+
+/* Mobile Specific Settings */
+.desktop-links {
+  display: none;
+}
+
+/* ---------------------- */
+/* --- Desktop Layout --- */
+/* ---------------------- */
+
+@media screen and (min-width: 500px) {
+
+  body {
+    height: 100vh;
+  }
+  /* No grid support */
+  .hero-container {
+    background-image: url("../assets/images/lg/drumset-full.webp");
+      }
+  
+  @supports (display: grid) {
+    .hero-container {
+      padding: 2rem;
+
+      /* layout */
+      grid-gap: 2rem;
+      grid-template-columns: 1fr minmax(200px, 2fr) minmax(4fr, 60vw), 10vw;
+      grid-template-areas:
+      ".    dl    .     nav"
+      ".    dl    hdr   head"
+      ".    .     .     soc"
+      "main main  .     soc"
+      "foot foot  foot  foot";
+    }
+  }
+  .desktop-links {
+    display: block;
+  }
+}
+
+/* ---------- */
+/* NAVIGATION */
+/* ---------- */
+.nav-wrapper input {
+  display: none;
+}
+.nav-wrapper > label {
+    color: var(--white);
+}
+.nav-wrapper input:checked ~ * ~ .nav-menu {
+  display: block;
+}
+
+.nav-menu {
+  display: none;
+}
