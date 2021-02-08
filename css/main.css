@@ -16,7 +16,7 @@
 
 /* Custom Variables */
 :root {
-  --black: hsl(38, 32%, 10%);
+  --black: hsl(3, 30%, 5%);
   --white: hsl(0, 0%, 98%);
 }
 
@@ -30,6 +30,7 @@ body {
   box-sizing: border-box;
   max-height: 110vh;
 }
+
 /* ------------*/
 /* Site Layout */
 /* ------------*/
@@ -86,20 +87,57 @@ body {
 /* Hero Section Elements Mobile / Defaults */
 /* --------------------------------------- */
 
-/* No Grid Support */
+/* No Grid Support and background images */
 .hero-wrapper {
-  background-image: url("../assets/images/lg/drumset-mobile.webp");
+  background-image: linear-gradient(to top, var(--black), transparent), url("../assets/images/lg/drumset-mobile.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
 }
-.downloads.container {
+
+.downloads-container {
   display: none;
 }
-.nav-wrapper
-/* Hero Grid Layout Mobile */
+
+/* Grid Layout Mobile */
+
 @supports (display:grid) {
   .hero-wrapper {
     display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr max-content max-content minmax(50px, 120px);
   }
+}
+
+/* Mobile Grid Items */
+.nav-wrapper {
+  grid-column: 3 / -1; 
+
+  justify-self: end;
+  align-self: start;
+}
+.title-container {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+}
+.banner-container {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.social-container {
+  grid-column: 3 / -1;
+  
+  justify-self: end;
+}
+.hero-footer {
+  
+  grid-column: 2 / -1;
+  grid-row: 4 / -1;
+
+  justify-self: end;
+  align-self: center;
 }
 
 /* ---------------------- */
@@ -110,8 +148,11 @@ body {
 
   /* No grid support & General Setup */
   .hero-wrapper {
-    background-image: url("../assets/images/lg/drumset-full.webp");
-    background-size: 100vw, 20vw;
+    background-image: linear-gradient(to top, var(--black), transparent), url("../assets/images/lg/drumset-full.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
   }
 
   @supports (display:grid) {
@@ -120,8 +161,8 @@ body {
       grid-auto-rows: minmax(150px, auto);
     }
     .hero-wrapper {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: 100px minmax(10rem, 2fr) 100px max-content mimax(50px, 1fr);
+      grid-template-rows: repeat(3, 1fr) 10rem;
     }
 
 /* ----------------------------- */
@@ -130,31 +171,38 @@ body {
     .nav-wrapper {
       padding: 20px 20px 0 0;
       grid-column: 4 / 5;
-      grid-row: 1 / -1;
+      grid-row: 1 / 2;
 
       justify-self: end;
     }
     .title-container {
 
-      grid-column: 3 / 5;
+      grid-column: 2 / 4;
       grid-row: 2 / 2;
 
-      justify-self: center;
+      justify-self: end;
     }
     .social-container {
-      margin-right: 20px;
+      
+      margin: 0 20px 0 0;
       grid-column: 4 / 5;
-      grid-row: 3 / 4;
+      grid-row: 4 / 5;
 
       justify-self: end;
-      align-self: start;
+      align-self: end;
+
+    }
+    .social-container > ul {
+      display: flex;
+      flex-direction: row;
+
     }
     .banner-container {
       margin: 0;
       grid-column: 2 / 3;
       grid-row: 1 / 1;
 
-      justify-self: end;
+      justify-self: start;
       align-self: start;
     }
     .downloads-container {
@@ -165,16 +213,17 @@ body {
       grid-column: 1 / 3;
       grid-row: 2 / 4;
 
-      justify-self: center;
+      justify-self: start;
       align-self: end;
     }
 
     .hero-footer {
-      grid-column: 4 /5 ;
-      grid-row: 4 / 5;
+      color: var(--white);
+      grid-column: 3 / 4 ;
+      grid-row: 3 / 4;
 
-      justify-self: start;
-      align-self: start;
+      justify-self: end;
+      align-self: end;
     }
   }
 }
@@ -200,8 +249,6 @@ body {
 /* ------ */
 
 /* hero title */
-.title-container {
-}
 
 /* Little banner in hero */
 .banner-container {
