@@ -1,16 +1,17 @@
 /* Fonts */
 h1 {
   font-family: "Oswald", sans-serif;
+  font-size: clamp(2.2rem, 10vw, 3.5rem);
 }
-h2, h3 {
+h2, h3, span {
   font-family: "Oswald", sans-serif;
-  font-size: clamp(1.5, 3vw, 2.5rem);
+  font-size:clamp(1.5rem, 10vw, 2.5rem);
   max-width: 20ch;
 }
 
 p, a, ul, li {
   font-family: "Josefin Slab", serif;
-  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-size: clamp(1.4rem, 10vw, 1.8rem);
   line-height: 1.4;
   max-width: 60ch;
 }
@@ -24,6 +25,10 @@ a, li {
 i {
   font-size: clamp(32px, 10vw, 42px);
 }
-.social-container i {
+.down-anchor i, .social-container i {
     font-size: clamp(10px, 10vw, 30px)
+}
+
+.down-anchor i, .hero-footer p {
+  color: var(--white);
 }

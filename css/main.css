@@ -106,12 +106,15 @@ body {
   .hero-wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 1fr max-content max-content minmax(50px, 120px);
+    grid-template-rows: 1fr max-content max-content max-content minmax(50px, 120px);
   }
 }
+/* -------------------------  */
+/* Default hero item settings */
+/* -------------------------  */
 
-/* Mobile Grid Items */
 .nav-wrapper {
+  margin: 12px 12px 0 0;
   grid-column: 3 / -1; 
 
   justify-self: end;
@@ -127,24 +130,35 @@ body {
 }
 
 .social-container {
+  margin: 12px 12px 1rem 0;
   grid-column: 3 / -1;
-  
+  grid-row: 5 / -1;
   justify-self: end;
 }
 .hero-footer {
-  
+  margin: 0 1rem 0 0;
   grid-column: 2 / -1;
-  grid-row: 4 / -1;
+  grid-row: 4 / 5;
 
   justify-self: end;
   align-self: center;
 }
+.down-anchor {
+  grid-column: 1 / -1;
+  grid-row: 5 / -1;
 
+  justify-self: start;
+  align-self: end;
+  padding: 0 0 1.2rem 2rem;
+}
+.down-anchor > *:hover {
+  color: red;
+}
 /* ---------------------- */
 /* --- Desktop Layout --- */
 /* ---------------------- */
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) {
 
   /* No grid support & General Setup */
   .hero-wrapper {
@@ -154,15 +168,18 @@ body {
     background-repeat: no-repeat;
     position: relative;
   }
-
+  /* Downloadable content desktop links are to stay in hero */
+  .mobile-downloads-container {
+    display: none;
+  } 
   @supports (display:grid) {
     .site-wrapper {
       grid-template-columns: 1fr;
       grid-auto-rows: minmax(150px, auto);
     }
     .hero-wrapper {
-      grid-template-columns: 100px minmax(10rem, 2fr) 100px max-content mimax(50px, 1fr);
-      grid-template-rows: repeat(3, 1fr) 10rem;
+      grid-template-columns: 100px minmax(10rem, 2fr) max-content mimax(50px, 1fr);
+      grid-template-rows: max-content max-content 1fr 10rem;
     }
 
 /* ----------------------------- */
@@ -183,7 +200,6 @@ body {
       justify-self: end;
     }
     .social-container {
-      
       margin: 0 20px 0 0;
       grid-column: 4 / 5;
       grid-row: 4 / 5;
@@ -202,7 +218,7 @@ body {
       grid-column: 2 / 3;
       grid-row: 1 / 1;
 
-      justify-self: start;
+      justify-self: center;
       align-self: start;
     }
     .downloads-container {
@@ -211,19 +227,27 @@ body {
 
       /* Layout in parent*/
       grid-column: 1 / 3;
-      grid-row: 2 / 4;
+      grid-row: 3 / 4;
 
       justify-self: start;
       align-self: end;
     }
 
     .hero-footer {
+      margin: 0 3rem 0 0;
       color: var(--white);
-      grid-column: 3 / 4 ;
+      grid-column: 3 / span 2 ;
       grid-row: 3 / 4;
 
       justify-self: end;
+      align-self: start;
+    }
+    .down-anchor {
+      grid-column: 2 /3;
+      grid-row: 4 / 5;
+      justify-self: center;
       align-self: end;
+      padding-bottom: 1rem;
     }
   }
 }
@@ -232,10 +256,13 @@ body {
 /* ---------- */
 .nav-wrapper input {
   display: none;
+
+  padding: 2rem;
 }
 .nav-wrapper > label {
     color: var(--white);
 }
+
 .nav-wrapper input:checked ~ * ~ .nav-menu {
   display: block;
 }
@@ -253,30 +280,58 @@ body {
 /* Little banner in hero */
 .banner-container {
   margin: 0;
+
+}
+.banner-link {
   display: flex;
   flex-direction: row;
+  color: var(--black);
+}
 
+.banner-link:hover > * {
+  background-color: red;
 }
 
 .banner-line {
   margin-right: 5px;
   padding: 8px 0px;
   background-color: var(--white);
-
-  opacity: 0.8;
+  opacity: 0.7;
   width: 5px;
-  height: 14rem;
+  height: 12.5rem;
 }
+/* main action */
 .banner-content {
   background-color: var(--white);
-  opacity: 0.8;
+  opacity: 0.6;
+  padding: 12px;
 
-  padding: 5px 5px 10px 5px;
+  height: 12rem;
+  max-width: 10rem;
+  min-width: 4rem;
 
-  height: 14rem;
-  max-width: 8rem;
-  min-width: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: right;
 }
 
+/* ----------------- */
+/* Main Body Content */
+/* ----------------- */
 
-
+/*About */
+.about-container {
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.about-container > * {
+  text-align: center;
+  align-self: center;
+}
+/* Mobile Downloads */
+.mobile-downloads-container * {
+  color: var(--black);
+}
