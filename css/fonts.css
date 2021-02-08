@@ -53,7 +53,14 @@ i {
   font-size: clamp(0.5rem, 10vh, 2rem);
   font-weight: 300;
 }
+
 /* Sign up banner */
 .banner-content  span {
   font-variant: small-caps;
+}
+
+/* Signup Form */
+.signup-fieldset > * {
+  font-family: "Josefin Slab", serif;
+  font-size: clamp(1rem, 10vw, 1.6rem);
 }

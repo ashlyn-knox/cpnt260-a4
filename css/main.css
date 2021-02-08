@@ -79,7 +79,7 @@ body {
   background-color: var(--black);
   color: lightgrey;
   display: flex;
-  min-height: 5vh;
+  min-height: 6vh;
 
   justify-content: center;
   align-items: flex-end;
@@ -189,11 +189,19 @@ body {
   .title {
     padding: 0;
   }
+
   /* Downloadable content desktop links are to stay in hero */
   .mobile-downloads-container {
     display: none;
-  } 
-  
+  }
+
+  /* signup form */
+  .signup-fieldset {
+    padding: 4rem;
+  }
+  .signup-fieldset > * {
+    padding: 1rem;
+  }
   /* Return to top anchor */
   .up-anchor {
     display: flex;
@@ -271,9 +279,9 @@ body {
       align-self: start;
     }
     .down-anchor {
-      grid-column: 2 /3;
+      grid-column: 1 /1;
       grid-row: 4 / 5;
-      justify-self: center;
+      justify-self: start;
       align-self: end;
       padding-bottom: 1rem;
     }
@@ -394,11 +402,46 @@ body {
   align-self: center;
 }
 /* Mobile Downloads */
+.mobile-downloads-container {
+  padding: 16px;
+}
 .mobile-downloads-container * {
   color: var(--black);
 }
+.mobile-quick-links li {
+  transition: opacity 0.25s ease-in-out;
+}
 .mobile-quick-links li:hover {
   list-style-image: url("../assets/icons/drum-circle-black.svg");
+  opacity: 0.8;
+}
+
+/* ------------ */
+/* Sign up Form */
+/* ------------ */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 16;
+  margin: 2rem 12px 4rem 12px;
+}
+.signup-fieldset {
+  border: solid 2px var(--black);
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+.signup-fieldset > * {
+   padding: 10px 0px;
+}
+.signup-button {
+  font-family: "Oswald", sans-serif;
+}
+.signup-button:hover {
+  background-color: var(--red);
 }
 /* ------------------------ */
 /* Quick navigation anchors */
@@ -416,7 +459,7 @@ body {
   opacity: 0.8;
   color: var(--red);
 }
-down-anchor i {
+.down-anchor i {
   transition: opacity 0.25s ease-in-out;
 
 }
@@ -424,4 +467,5 @@ down-anchor i {
   opacity: 0.8;
   color: var(--red);
 }
+
 

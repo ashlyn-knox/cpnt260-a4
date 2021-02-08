@@ -10,11 +10,6 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/reset.css">
 
-    <!--fonts-->
-    <!--josefin sans title, raleway body-->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">-->
-    <!--<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">-->
-
     <!--Oswald Title and josefin slab body-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300;400;500&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet"> 
@@ -31,12 +26,12 @@
         <div>
           <a href="index.html"><img src="assets/icons/drum-circle.svg" width="40px" class="home-icon"></a>
         </div>
+
         <!--Site Navigation-->
         <div class="nav-wrapper">
 
           <input type="checkbox" id="menu-toggle">
           <label for="menu-toggle"><i class="las la-bars"></i></label>
-          <!--TODO MAKE IT SO THAT THE NAV IS JUST NAVIGATION AND THE REST OF THE MENU HAS DIFFERENT TITLES-->
           <nav class="nav-menu">
             <h2>Menu</h2>
 
@@ -57,7 +52,7 @@
 
         <!--Stylized call to action-->
         <div class="banner-container">
-          <a href="#" class="banner-link">
+          <a href="#signup" class="banner-link">
           <div class="banner-line"></div>
           <div class="banner-content">
             <span>sign</span>
@@ -71,7 +66,6 @@
         <!--social media icons-->
         <aside class="social-container">
           <ul>
-
             <li><a href="https://github.com/ashlyn-knox"><i class="lab la-github"></i></a></li>
             <li><a href="#"><i class="las la-envelope"></i></a></li>
           </ul>
@@ -93,7 +87,6 @@
           </div>
         </section>
 
-
         <!--Hero Footer-->
         <div class="hero-footer">
           <p>By</br>Ashlyn Knox</p>
@@ -113,7 +106,6 @@
           <i class="las la-drum"></i>
           <p>If you are interested in learning how to write your own drum notation in lilypond. I am also putting together a small set of docs on best practices that I have learned over the years.</p>
         </article>
-
         <!--Quick links download section-->
         <section class="mobile-downloads-container">
           <div class="shape-dl-1"></div>
@@ -129,6 +121,25 @@
             </ul>
           </div>
         </section>
+        <!--Sign up form-->
+        <section class="signup-form" id="signup">
+          <h2>Sign Up Here</h2>
+          <p>I offer both in person and online drum lessons at a competitive rate. Drop me an email here and I will respond within 24hours with an available consultation time.</p>
+          <form action="https://formspree.io/f/xwkwzzvn" method="POST" class="contact-sign-up">
+            <fieldset class="signup-fieldset">
+              <legend tabindex="0">Please enter your contact information.</legend>
+              <label for="name">Name: </label>
+              <input type="text" placeholder="Enter your name" name="name" required>
+              <label for="email">Email: </label>
+              <input type="email" placeholder="Enter your email "name="_replyto" required>
+              <label for="date-select">Preferred Date: </label>
+              <input type="date" name="date-select" required>
+              <input type="submit" value="Send" class="signup-button">
+            </fieldset>
+          </form>
+
+        </section>
+
         <!--back to top-->
         <div class="up-anchor">
         <a href="#hero-return"><i class="las la-chevron-up"></i></a>
