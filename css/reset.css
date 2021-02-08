@@ -1,4 +1,25 @@
-body {
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body, h1, h2, h3, p, ul, li, span, a {
   margin: 0;
   padding: 0;
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
 }
