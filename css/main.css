@@ -1,20 +1,27 @@
 /* ----------------------- */
 
 /* ----- CSS Finder ------*/
-
-/* 1. Custom variables
- * 2. Top level settings
- * 3. Mobile Grid Setup
- * 4. Mobile Grid Items
- * 5. Desktop Grid Setup
- * 6. Desktop Grid Items
- * 7. Navigation 
- * 8. Shapes
+/* NOTE: Mobile settings include defaults
+ 
+/* 1. Custom variables      18
+ * 2. Mobile Grid Setup     35
+ * 3. Mobile Grid Items     64
+ * 4. Mobile Hero Setup     89
+ * 5. Mobile Hero Grid      128
+ * 6. Desktop Layout        187
+ * 7. Desktop Hero          233
+ * 8. Desktop Grid Items    224
+ * 9. Navigation            311
+ * 10. Shapes               366
+ * 11. Body Content         436
+ * 12. Sign up form         472
+ * 13. Quick nav anchors    501
  * */
 
 /* ----------------------- */
 
 /* Custom Variables */
+
 :root {
   --black: hsl(3, 30%, 5%);
   --white: hsl(0, 0%, 98%);
@@ -24,7 +31,6 @@
 /* ------------- */
 /* Mobile Layout */
 /* ------------- */
-
 
 body {
   margin: auto;
@@ -71,16 +77,17 @@ body {
   flex-grow: 1;
 
   /* grid layout */
-  /* This method fixed the scroll problem in my last assignment by using the center elements to push the header and footer to the top and bottom respectively */
   display: grid;
   justify-content: center;
 }
 .footer-wrapper {
   background-color: var(--black);
   color: lightgrey;
-  display: flex;
-  min-height: 6vh;
 
+  min-height: 6vh;
+  padding: 2rem;
+
+  display: flex;
   justify-content: center;
   align-items: flex-end;
 }
@@ -120,7 +127,10 @@ body {
 .desktop-links li:hover {
   list-style-image: url("../assets/icons/drum-circle.svg")
 }
+
+/* ------------------ */
 /* Grid Layout Mobile */
+/* ------------------ */
 
 @supports (display:grid) {
   .hero-wrapper {
@@ -140,11 +150,13 @@ body {
   justify-self: end;
   align-self: start;
 }
+
 .title-container {
   grid-column: 1 / 3;
   grid-row: 3 / 4;
   padding: 12px;
 }
+
 .banner-container {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
@@ -156,6 +168,7 @@ body {
   grid-row: 5 / -1;
   justify-self: end;
 }
+
 .hero-footer {
   margin: 0 1rem 0 0;
   grid-column: 2 / -1;
@@ -164,6 +177,7 @@ body {
   justify-self: end;
   align-self: center;
 }
+
 .down-anchor {
   grid-column: 1 / -1;
   grid-row: 5 / -1;
@@ -172,6 +186,7 @@ body {
   align-self: end;
   padding: 0 0 1.2rem 2rem;
 }
+
 /* ---------------------- */
 /* --- Desktop Layout --- */
 /* ---------------------- */
@@ -208,6 +223,8 @@ body {
     justify-content: flex-end;
     align-items: flex-end;
   }
+
+  /* Grid Support Layout */
   @supports (display:grid) {
     .site-wrapper {
       grid-template-columns: 1fr;
@@ -228,6 +245,7 @@ body {
 
       justify-self: end;
     }
+
     .title-container {
 
       grid-column: 2 / 4;
@@ -235,6 +253,7 @@ body {
 
       justify-self: end;
     }
+
     .social-container {
       margin: 0 20px 0 0;
       grid-column: 4 / 5;
@@ -244,11 +263,13 @@ body {
       align-self: end;
 
     }
+
     .social-container > ul {
       display: flex;
       flex-direction: row;
 
     }
+
     .banner-container {
       margin: 0;
       grid-column: 2 / 3;
@@ -257,6 +278,7 @@ body {
       justify-self: center;
       align-self: start;
     }
+
     .downloads-container {
       /* layout of grid items*/
       display: grid;
@@ -287,28 +309,34 @@ body {
     }
   }
 }
+
 /* ---------- */
 /* NAVIGATION */
 /* ---------- */
+
 .nav-wrapper {
   display: flex;
 }
+
 .nav-wrapper input {
   display: none;
-
   padding: 2rem;
 }
+
 .nav-wrapper > label {
   color: var(--white);
 }
+
 .nav-wrapper > label:hover {
   opacity: 0.8;
   cursor: pointer;
 }
+/* checkbox interaction */
 .nav-wrapper input:checked ~ * ~ .nav-menu {
   display: block;
 }
 
+/* Menu styling */
 .nav-menu {
   height: 100%;
   background-color: var(--black);
@@ -323,11 +351,18 @@ body {
   background-color: var(--red);
 }
 
+.social-container i {
+
+ transition: opacity 0.25s ease-in-out;
+
+}
 
 /* Link to github */
 .social-container i:hover {
   opacity: 0.8;
+  color: var(--red);
 }
+
 /* ------ */
 /* Shapes */
 /* ------ */
@@ -344,11 +379,12 @@ body {
   cursor: pointer;
   opacity: 0.8;
 }
-/* Little banner in hero */
+/* Action Banner in hero */
 .banner-container {
   margin: 0;
 
 }
+
 .banner-link {
   display: flex;
   flex-direction: row;
@@ -361,28 +397,40 @@ body {
   opacity: 0.8;
 }
 
+.banner-content {
+  transition: color 0.25s ease-in-out;
+}
+
+.banner-content:hover {
+  color: var(--red);
+}
 
 .banner-line {
-  margin-right: 5px;
-  padding: 8px 0px;
   background-color: var(--white);
   opacity: 0.7;
+
+  margin-right: 5px;
+  padding: 8px 0px;
+
   width: 5px;
-  height: 12.5rem;
+  height: 14rem;
 }
-/* main action */
+
+/* banner action */
 .banner-content {
   background-color: var(--white);
   opacity: 0.6;
-  padding: 12px;
 
-  height: 12rem;
+  padding: 0px 8px 4px 4px;
+  height: 14rem;
   max-width: 10rem;
   min-width: 4rem;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: flex-end;
+
   text-align: right;
 }
 
@@ -397,20 +445,25 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .about-container > * {
   text-align: center;
   align-self: center;
 }
+
 /* Mobile Downloads */
 .mobile-downloads-container {
   padding: 16px;
 }
+
 .mobile-downloads-container * {
   color: var(--black);
 }
+
 .mobile-quick-links li {
   transition: opacity 0.25s ease-in-out;
 }
+
 .mobile-quick-links li:hover {
   list-style-image: url("../assets/icons/drum-circle-black.svg");
   opacity: 0.8;
@@ -443,6 +496,7 @@ body {
 .signup-button:hover {
   background-color: var(--red);
 }
+
 /* ------------------------ */
 /* Quick navigation anchors */
 /* ------------------------ */

@@ -6,6 +6,7 @@ h1 {
   font-size: clamp(2.6rem, 10vw, 3.5rem);
   font-weight: 800;
 }
+
 h2, h3, span {
   font-family: "Oswald", sans-serif;
   font-size:clamp(1.5rem, 10vw, 2.5rem);
@@ -17,6 +18,7 @@ p, a, ul, li {
   font-size: clamp(1.4rem, 10vw, 1.8rem);
   line-height: 1.4;
   max-width: 60ch;
+  min-width: 20ch;
 }
 
 a, li {
@@ -25,6 +27,7 @@ a, li {
   list-style-type: none;
 }
 
+/* Anchor fonts*/
 i {
   font-size: clamp(32px, 10vw, 42px);
 }
@@ -39,6 +42,10 @@ i {
   color: var(--black);
 }
 
+/* ------------- */
+/* Section Fonts */
+/* ------------- */
+
 /* Nav menu settings */
 .nav-menu h2 {
   color: var(--white);
@@ -47,13 +54,13 @@ i {
 .nav-menu hr {
   width: 8rem;
 }
-/*This needs to be adjusted for mobile*/
+
 .nav-links a {
   font-family: "Oswald", sans-serif;
   font-size: clamp(0.5rem, 10vh, 2rem);
   font-weight: 300;
 }
-
+/* -------------- */
 /* Sign up banner */
 .banner-content  span {
   font-variant: small-caps;
